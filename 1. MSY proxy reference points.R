@@ -46,12 +46,13 @@ library(triangle)
 library(TeachingDemos)      #for grey scale
 library(mvtnorm)      #for multivariate normal pdf
 library(PBSmapping)
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
 
 #source sigmas for var-covar matrix
-source("C:/Matias/Analyses/Reference Points/5.Derive var_covar Matrix.r")
+source(handl_OneDrive("Analyses/Reference Points/5.Derive var_covar Matrix.r"))
 
 #source indirect estimation of M
-source("C:/Matias/Analyses/SOURCE_SCRIPTS/M_indirect.R")
+source(handl_OneDrive("Analyses/SOURCE_SCRIPTS/M_indirect.R"))
 
 
 
@@ -905,7 +906,7 @@ for(p in 1:N.sp)
 
 SP.names=c("gummy shark","whiskery shark","dusky shark","sandbar shark")
 
-setwd("C:/Matias/Analyses/Reference Points/Outputs")
+setwd(handl_OneDrive("Analyses/Reference Points/Outputs"))
 #setwd("C:/Matias/Analyses/Reference Points/Outputs/p_0.65")
 #setwd("C:/Matias/Analyses/Reference Points/Outputs/p_0.85")
 
@@ -950,7 +951,7 @@ for (j in 1:N.sp)
   Median.M=apply(mSim,2,colMedian)
   Median.M=Median.M[!is.na(Median.M)]
   write.csv(cbind(Median.M,Age=seq(0,Max.max.age[j]-1,1)),
-      paste("C:/Matias/Data/Population dynamics/Parameter inputs for models/",
+      paste(handl_OneDrive("Data/Population dynamics/Parameter inputs for models/"),
         names(Species.M)[j],".M_at_age.csv",sep=""),row.names=F)
 }
 mtext(expression("     Natural mortality  " (year^-1)),side=2,line=-1.25,font=1,las=0,cex=1.2,outer=T)
@@ -980,7 +981,7 @@ for (j in 1:N.sp)
   Median.Sel=apply(SelSim,2,colMedian)
   Median.Sel=Median.Sel[!is.na(Median.Sel)]
   write.csv(cbind(Median.Sel,Age=seq(0,Max.max.age[j]-1,1)),
-            paste("C:/Matias/Data/Population dynamics/Parameter inputs for models/",
+            paste(handl_OneDrive("Data/Population dynamics/Parameter inputs for models/"),
                   names(Species.M)[j],".Selectivity_at_age.csv",sep=""),row.names=F)
   
   
@@ -1149,7 +1150,7 @@ for (i in 1:N.sp)
 
     #export steepness for populatin dynamics
     Steep.pop.dyn=round(c(mean=mean(this),sd=sd(this)),3)
-    write.csv(data.frame(t(Steep.pop.dyn)),paste("C:/Matias/Data/Population dynamics/Parameter inputs for models/",
+    write.csv(data.frame(t(Steep.pop.dyn)),paste(handl_OneDrive("Data/Population dynamics/Parameter inputs for models/"),
                 names(Species.M)[i],".Steepness.csv",sep=""),row.names=F)
 
 

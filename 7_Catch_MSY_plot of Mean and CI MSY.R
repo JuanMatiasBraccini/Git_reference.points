@@ -1,8 +1,9 @@
 
 #---DATA SECTION-----
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
 
 #TDGDLF
-setwd("C:/Matias/Analyses/Reference Points")
+setwd(handl_OneDrive("Analyses/Reference Points"))
 Dus.catch=read.csv("Tot.c.dusky.csv")
 Gum.catch=read.csv("Tot.c.gummy.csv")
 San.catch=read.csv("Tot.c.sandbar.csv")
@@ -53,7 +54,7 @@ fn.plotFig.5=function(OUT,OUT.L,OUT.U,DAT,SPEC)
   
 }
 
-tiff(file="C:/Matias/Analyses/Reference Points/Outputs/Figure5_Mean.CI.MSY.tiff",width = 2400,
+tiff(file=handl_OneDrive("Analyses/Reference Points/Outputs/Figure5_Mean.CI.MSY.tiff"),width = 2400,
      height = 2400,units = "px", res = 300, compression = "lzw")    #create tiff
 
 par(mfcol=c(2,2),mai=c(.6,.6,.1,.1),oma=c(.01,.1,.01,.1),mgp=c(1,.6,0))

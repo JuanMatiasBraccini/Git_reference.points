@@ -10,9 +10,10 @@ library(triangle)
 library(TeachingDemos)      #for grey scale
 library(mvtnorm)      #for multivariate normal pdf
 library(PBSmapping)
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
 
 #source sigmas for var-covar matrix
-source("C:/Matias/Analyses/Reference Points/5.Derive var_covar Matrix.r")
+source(handl_OneDrive("Analyses/Reference Points/5.Derive var_covar Matrix.r"))
 
 #source indirect estimation of M
 #M.gummy=0.186  #Table 20 Simpfendorfer et al 1996

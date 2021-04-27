@@ -11,9 +11,9 @@ set.seed(999)  ## for same random sequence
 
 
 #---DATA SECTION-----
-
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
 #TDGDLF
-setwd("C:/Matias/Analyses/Reference Points")
+setwd(handl_OneDrive("Analyses/Reference Points"))
 Dus.catch=read.csv("Tot.c.dusky.csv")
 Gum.catch=read.csv("Tot.c.gummy.csv")
 San.catch=read.csv("Tot.c.sandbar.csv")
@@ -217,7 +217,7 @@ sraMSY	<-function(theta, N)
 user="Yes"
 #user="No"
 
-setwd("C:/Matias/Analyses/Reference Points/Outputs/MSY_Catch")
+setwd(handl_OneDrive("Analyses/Reference Points/Outputs/MSY_Catch"))
 
 ## Loop through stocks
 stock_id <- unique(as.character(cdat$stock))
@@ -469,7 +469,7 @@ fn.plotFig.5=function(OUT,DAT,SPEC)
   
 }
 
-tiff(file="C:/Matias/Analyses/Reference Points/Outputs/Figure5.tiff",width = 2400,
+tiff(file=handl_OneDrive("Analyses/Reference Points/Outputs/Figure5.tiff"),width = 2400,
      height = 2400,units = "px", res = 300, compression = "lzw")    #create tiff
 
 par(mfcol=c(2,2),mai=c(.6,.6,.1,.1),oma=c(.01,.1,.01,.1),mgp=c(1,.6,0))
@@ -491,7 +491,7 @@ dev.off()
 
 
 #not used
-tiff(file="C:/Matias/Analyses/Reference Points/Outputs/Figure5.tiff",width = 2400,
+tiff(file=handl_OneDrive("Analyses/Reference Points/Outputs/Figure5.tiff"),width = 2400,
      height = 2400,units = "px", res = 300, compression = "lzw")    #create tiff
 
 par(mfcol=c(2,1),mai=c(.8,.8,.01,.1),oma=c(.1,.1,.1,.1),mgp=c(1,.6,0))
@@ -505,7 +505,7 @@ Col.Lim="black"
 
 
 #5.a CPUE-based
-Whisk.cpue=read.csv("C:/Matias/Analyses/Reference Points/CPUE.whiskery.csv")
+Whisk.cpue=read.csv(handl_OneDrive("Analyses/Reference Points/CPUE.whiskery.csv"))
 
 Binit=0.95
 Tar.cpue=0.461*Whisk.cpue[1,2]/Binit    #update from Reference Points

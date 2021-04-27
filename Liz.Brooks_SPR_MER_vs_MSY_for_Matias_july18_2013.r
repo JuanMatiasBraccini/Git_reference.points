@@ -20,8 +20,10 @@ graphics.off()  # close any open graphics windows
 
 #------------------USER MUST DEFINE THESE---------------------------#
 
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
+
 #working directory (copy from Explorer window and double all "\")
-wd <-  setwd("C:/Matias/Analyses/Reference Points/From Liz Brooks")    
+wd <-  setwd(handl_OneDrive("Analyses/Reference Points/From Liz Brooks"))    
 
 # specify the biological parameters at age
 

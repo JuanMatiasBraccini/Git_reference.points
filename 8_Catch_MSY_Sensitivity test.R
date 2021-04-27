@@ -5,7 +5,7 @@ SIGR=c(0,0.05,0.1)
 USER=c("No","Yes")
 K.UPPER=c(10,50,100)
 
-
+handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
 
 for (w in 1: length(USER))
 {
@@ -16,7 +16,7 @@ for (w in 1: length(USER))
     for (x in 1:length(K.UPPER))
     {
       K.upper=K.UPPER[x]
-      setwd(paste("C:/Matias/Analyses/Reference Points/Outputs/MSY_Catch/sensitivity tests/NEW/",
+      setwd(paste(handl_OneDrive("Analyses/Reference Points/Outputs/MSY_Catch/sensitivity tests/NEW/"),
                   K.upper,"/",sigR,"/",user,sep=""))
       for(stock in stock_id)
       {
@@ -260,7 +260,7 @@ for (w in 1: length(USER))
     for (x in 1:length(K.UPPER))
     {
       K.upper=K.UPPER[x]
-      setwd(paste("C:/Matias/Analyses/Reference Points/Outputs/MSY_Catch/sensitivity tests/NEW/Catch.effect/dusky/k.50/sigma.0/",
+      setwd(paste(handl_OneDrive("Analyses/Reference Points/Outputs/MSY_Catch/sensitivity tests/NEW/Catch.effect/dusky/k.50/sigma.0/"),
                   user,sep=""))
       for(stock in stock_id.sens)
       {
@@ -515,7 +515,7 @@ for (w in 1: length(USER))
     for (x in 1:length(K.UPPER))
     {
       K.upper=K.UPPER[x]
-      setwd(paste("C:/Matias/Analyses/Reference Points/Outputs/MSY_Catch/sensitivity tests/NEW/Catch.effect/gummy/k.50/sigma.0/",
+      setwd(paste(handl_OneDrive("Analyses/Reference Points/Outputs/MSY_Catch/sensitivity tests/NEW/Catch.effect/gummy/k.50/sigma.0/"),
                   user,sep=""))
       for(stock in stock_id.sens)
       {
