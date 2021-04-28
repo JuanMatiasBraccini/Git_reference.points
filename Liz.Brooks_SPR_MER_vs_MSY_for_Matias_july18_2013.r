@@ -20,7 +20,7 @@ graphics.off()  # close any open graphics windows
 
 #------------------USER MUST DEFINE THESE---------------------------#
 
-handl_OneDrive=function(x)paste('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias',x,sep='/')
+if(!exists('handl_OneDrive')) source('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/SOURCE_SCRIPTS/Git_other/handl_OneDrive.R')
 
 #working directory (copy from Explorer window and double all "\")
 wd <-  setwd(handl_OneDrive("Analyses/Reference Points/From Liz Brooks"))    
